@@ -8,14 +8,16 @@ class Bank
 
   attr_reader :balance
 
-  def deposit(amount)
+  def deposit(amount, date)
     raise 'Invalid amount' if amount.nil? || amount <= 0
+    raise 'Invalid date' if date.nil?
 
     @balance += amount
   end
 
-  def withdrawal(amount)
+  def withdrawal(amount, date)
     raise 'Invalid amount' if amount.nil? || amount <= 0
+    raise 'Invalid date' if date.nil?
 
     @balance -= amount
   end

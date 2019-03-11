@@ -3,17 +3,17 @@
 require 'bank'
 
 describe Bank do
-  let(:bank) { Bank.new }
+  let(:bank) { described_class.new }
 
-  context 'bank deposit process' do
+  context 'when depositing money' do
     it 'increases bank balance on a successful deposit' do
-      expect { bank.deposit(1000) }.to change { bank.balance }.by(1000)
+      expect { bank.deposit(1000, '20-01-2019') }.to change(bank, :balance).by(1000)
     end
   end
 
-  context 'bank withdrawal process' do
+  context 'when withdrawing money' do
     it 'decreases bank balance on a successful deposit' do
-      expect { bank.withdrawal(1000) }.to change { bank.balance }.by(-1000)
+      expect { bank.withdrawal(1000, '21-01-2019') }.to change(bank, :balance).by(-1000)
     end
   end
 end
