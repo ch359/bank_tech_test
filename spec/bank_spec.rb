@@ -15,7 +15,11 @@ describe Bank do
     end
 
     it 'does not accept negative values' do
-      expect { bank.deposit(-500) }.to(raise_error { 'Invalid amount' })
+      expect { bank.deposit(-500, '2019-02-24') }.to(raise_error { 'Invalid amount' })
+    end
+
+    it 'rejects nil dates' do
+      expect { bank.deposit(500, nil) }.to(raise_error { 'Invalid date' })
     end
   end
 
