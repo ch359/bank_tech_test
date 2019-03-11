@@ -13,4 +13,10 @@ class Bank
 
     @balance += amount
   end
+
+  def withdrawal(amount)
+    raise 'Invalid amount' if amount.nil? || amount <= 0
+
+    @balance -= amount
+  end
 end

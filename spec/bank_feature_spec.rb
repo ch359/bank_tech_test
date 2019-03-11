@@ -10,4 +10,10 @@ describe Bank do
       expect { bank.deposit(1000) }.to change { bank.balance }.by(1000)
     end
   end
+
+  context 'bank withdrawal process' do
+    it 'decreases bank balance on a successful deposit' do
+      expect { bank.withdrawal(1000) }.to change { bank.balance }.by(-1000)
+    end
+  end
 end
