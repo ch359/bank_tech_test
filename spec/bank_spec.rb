@@ -4,7 +4,7 @@ require 'bank'
 
 describe Bank do
   let(:bank) { described_class.new(printer) }
-  let(:printer) { double('Printer') }
+  let(:printer) { instance_double('Printer') }
 
   context 'when depositing money' do
     it ':deposit' do
