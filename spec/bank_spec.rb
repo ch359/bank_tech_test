@@ -3,7 +3,8 @@
 require 'bank'
 
 describe Bank do
-  let(:bank) { described_class.new }
+  let(:bank) { described_class.new(printer) }
+  let(:printer) { double('Printer') }
 
   context 'when depositing money' do
     it ':deposit' do
@@ -37,6 +38,14 @@ describe Bank do
 
     it 'rejects nil dates' do
       expect { bank.withdraw(500, nil) }.to(raise_error { 'Invalid date' })
+    end
+  end
+
+  context 'when asked to print a statement' do
+    it 'delegates to the Printer class' do
+      allow(printer).to receive(:print_statement)
+      bank.print_statement
+      expect(printer).to have_received(:print_statement)
     end
   end
 end
