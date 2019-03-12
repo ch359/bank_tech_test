@@ -13,7 +13,7 @@ class Printer
   private
 
   def print_transaction(transaction)
-    output = transaction[:date] + ' || '
+    output = print_date(transaction)
     output += if transaction[:amount].positive?
                 print_credit(transaction)
               else
@@ -26,12 +26,8 @@ class Printer
     "date || credit || debit || balance\n"
   end
 
-  def print_lines
-    output = print_header
-    @transactions.reverse_each do |transaction|
-      output += print_transaction(transaction)
-    end
-    print output
+  def print_date(transaction)
+    transaction[:date] + ' || '
   end
 
   def print_credit(transaction)
