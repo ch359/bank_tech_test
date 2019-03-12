@@ -5,3 +5,7 @@ Metrics/LineLength:
 
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
+
+RSpec/ExampleLength:
+  Exclude:
+    - spec/*
