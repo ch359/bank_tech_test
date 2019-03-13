@@ -4,7 +4,8 @@
 class Printer
   def print_statement(transactions)
     output = print_header
-    transactions.reverse_each do |transaction|
+    ordered_transactions = correct_order(transactions)
+    ordered_transactions.each do |transaction|
       output += print_transaction(transaction)
     end
     puts output
@@ -24,6 +25,10 @@ class Printer
 
   def print_header
     "date || credit || debit || balance\n"
+  end
+
+  def correct_order(transactions)
+    transactions.sort_by(&:date).reverse
   end
 
   def print_date(transaction)
