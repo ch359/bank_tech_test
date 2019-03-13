@@ -27,7 +27,8 @@ class Printer
   end
 
   def print_date(transaction)
-    transaction.date + ' || '
+    date = format_date(transaction.date)
+    date + ' || '
   end
 
   def print_credit(transaction)
@@ -36,5 +37,9 @@ class Printer
 
   def print_debit(transaction)
     '|| ' + format('%.2f', (-transaction.amount)) + ' || ' + format('%.2f', transaction.balance)
+  end
+
+  def format_date(date)
+    date.strftime("%d/%m/%Y")
   end
 end

@@ -31,6 +31,7 @@ Bank app with basic deposit, withdrawal and statement printing functionality.
 - The decision to create a transaction class. Since it's merely a 'repository' for some instance variables, I had resisted the urge to create this to avoid premature optimisation when using a class doesn't add any functionality. 
     - I went with a transaction class because the self feedback form implied it was the right option, but I'm not convinced. Up to this point, the `@transactions` array in `Bank` simply contained a list of hashes, with `amount, date and balance` keys.
     - Would be very interested in your thoughts.
+    - Are you happy with no unit testing of the Transaction class at all? (The only test I would be able to do (e.g. checking instance variables are set) feels like a test of state, not behaviour)
 - The decision to use 'real' dates rather than strings
     - It felt a bit bad to leave things as strings even though not in the requirements to do anything other than present the string.
     Your thoughts?

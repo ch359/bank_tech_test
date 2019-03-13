@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 # Bank can accept deposits, withdrawals and print statements
+require 'transaction'
+
 class Bank
   def initialize(printer = Printer.new)
     @balance = 0
