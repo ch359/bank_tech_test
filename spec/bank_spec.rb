@@ -8,7 +8,7 @@ describe Bank do
 
   context 'when depositing money' do
     it ':deposit' do
-      expect { bank.deposit(500, '2019-02-24') }. to change(bank, :balance).by(500)
+      expect { bank.deposit(500) }. to change(bank, :balance).by(500)
     end
 
     it 'does not accept nil values' do

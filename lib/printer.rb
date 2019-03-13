@@ -36,10 +36,10 @@ class Printer
   end
 
   def print_debit(transaction)
-    '|| ' + format('%.2f', (-transaction.amount)) + ' || ' + format('%.2f', transaction.balance)
+    '|| ' + format('%.2f', -transaction.amount) + ' || ' + format('%.2f', transaction.balance)
   end
 
   def format_date(date)
-    date.strftime("%d/%m/%Y")
+    date.strftime('%d/%m/%Y')
   end
 end

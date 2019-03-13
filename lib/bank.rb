@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-# Bank can accept deposits, withdrawals and print statements
 require 'transaction'
-
+# Bank can accept deposits, withdrawals and print statements
 class Bank
   def initialize(printer = Printer.new)
     @balance = 0
@@ -12,13 +11,13 @@ class Bank
 
   attr_reader :balance
 
-  def deposit(amount, date)
+  def deposit(amount, date = Date.today)
     raise 'Invalid amount' if amount <= 0
 
     record_transaction(amount, date)
   end
 
-  def withdraw(amount, date)
+  def withdraw(amount, date = Date.today)
     raise 'Invalid amount' if amount <= 0
 
     record_transaction(-amount, date)

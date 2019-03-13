@@ -17,7 +17,3 @@ describe Printer do
 10/01/2012 || 1000.00 || || 1000.00\n").to_stdout
   end
 end
-
-
-"date || credit || debit || balance\n2019/02/03 || || 300.00 || 200.00\n2019/02/01 || 500.00 || || 500.00\n"
-"date || credit || debit || balance\n03/02/2019 || || 300.00 || 200.00\n01/02/2019 || 500.00 || || 500.00\n"
