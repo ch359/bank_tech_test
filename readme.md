@@ -42,7 +42,7 @@ Functionality illustrated:
     - Are you happy with no unit testing of the Transaction class at all? (The only test I would be able to do (e.g. checking instance variables are set) feels like a test of state, not behaviour)
 - The decision to use 'real' dates rather than strings
     - It felt a bit bad to leave things as strings even though not in the requirements to do anything other than present the string.
-    Your thoughts?
+    - Your thoughts?
 - The testing of private methods
     - I still find the distinction between feature and unit tests unclear in my head.
     - I've clearly primarily feature tested here, but e.g. my Printer class only has a single unit test. 
