@@ -11,6 +11,11 @@ Bank app with basic deposit, withdrawal and statement printing functionality.
 - Tests can be run by executing `rspec` in the project root.
 - Lint the project by executing `rubocop` in the project root.
 - Coverage is provided by `simplecov` and can be found in `coverage/index.html` after running `rspec`.
+- In `irb`, `require_relative 'lib/bank'`
+
+Functionality illustrated:
+
+![screenshot](bank.png)
 
 ### Approach
 
@@ -24,7 +29,10 @@ Bank app with basic deposit, withdrawal and statement printing functionality.
 - `Transaction`: Contains the key data for a transaction (date, amount, balance)
 
 ### Assumptions
-
+- That proper Date objects are needed
+- That ordering should be done by Date rather than by the order of transaction entering
+- I have not implemented a 'live' balance: it is locked to the balance when the transaction is made.
+    - As requirement didn't specify the editing of previously entered transactions, this didn't interfere with implementation.
 
 ### Points I'd like specific feedback on
 
@@ -40,9 +48,12 @@ Bank app with basic deposit, withdrawal and statement printing functionality.
     - I've clearly primarily feature tested here, but e.g. my Printer class only has a single unit test. 
     - This is because only one method is a public one, and I understand it's best practice to only test the public interface of a class.
     - Can I check you agree with this approach? What about in my review etc. - is it ok to skip testing private methods under 'exam' conditions or will I be risking a "he is not TDDing" comment?
+- Usage of a 'balance' attribute reader so I can unit test deposits and withdrawals.
+    - I don't like adding a reader just for a test...
+    - But I've heard that typing tests to implementation, like using GET_INSTANCE_VARIABLE to grab the balance directly from the class also isn't good practice. 
+    - Would love your thoughts.
  
- 
-Include a screenshot of your running app?
+
 
 ## Instructions
 
@@ -53,8 +64,6 @@ For most tech tests, you'll essentially have unlimited time.  This practice sess
 You'll get to practice your OO design and TDD skills.
 
 You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
-
-## Specification
 
 ### Requirements
 

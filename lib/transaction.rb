@@ -6,7 +6,7 @@ class Transaction
 
   def initialize(amount:, date:, balance:)
     @amount = amount
-    @date = date.is_a?(Date) || Date.parse(date)
+    @date = date.is_a?(Date) ? date : Date.parse(date)
     @balance = balance
   end
 end
