@@ -34,9 +34,11 @@ class Bank
 
     new_balance = @balance += amount.to_f
     @transactions.push(
-      amount: amount.to_f,
-      date: date,
-      balance: new_balance
+      Transaction.new(
+        amount: amount.to_f,
+        date: date,
+        balance: new_balance
+      )
     )
   end
 end

@@ -14,7 +14,7 @@ class Printer
 
   def print_transaction(transaction)
     output = print_date(transaction)
-    output += if transaction[:amount].positive?
+    output += if transaction.amount.positive?
                 print_credit(transaction)
               else
                 print_debit(transaction)
@@ -27,14 +27,14 @@ class Printer
   end
 
   def print_date(transaction)
-    transaction[:date] + ' || '
+    transaction.date + ' || '
   end
 
   def print_credit(transaction)
-    format('%.2f', transaction[:amount]) + ' || || ' + format('%.2f', transaction[:balance])
+    format('%.2f', transaction.amount) + ' || || ' + format('%.2f', transaction.balance)
   end
 
   def print_debit(transaction)
-    '|| ' + format('%.2f', (-transaction[:amount])) + ' || ' + format('%.2f', transaction[:balance])
+    '|| ' + format('%.2f', (-transaction.amount)) + ' || ' + format('%.2f', transaction.balance)
   end
 end
