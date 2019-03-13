@@ -2,7 +2,8 @@
 
 ## Summary
 
-Bank app with basic deposit, withdrawal and statement printing functionality. 
+- Bank app with basic deposit, withdrawal and statement printing functionality.
+- All tests and linting passing. 100% coverage. 
 
 ### Instructions for use
 
