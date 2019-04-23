@@ -35,27 +35,6 @@ Functionality illustrated:
 - I have not implemented a 'live' balance: it is locked to the balance when the transaction is made.
     - As requirement didn't specify the editing of previously entered transactions, this didn't interfere with implementation.
 
-### Points I'd like specific feedback on
-
-- The decision to create a transaction class. Since it's merely a 'repository' for some instance variables, I had resisted the urge to create this to avoid premature optimisation when using a class doesn't add any functionality. 
-    - I went with a transaction class because the self feedback form implied it was the right option, but I'm not convinced. Up to this point, the `@transactions` array in `Bank` simply contained a list of hashes, with `amount, date and balance` keys.
-    - Would be very interested in your thoughts.
-    - Are you happy with no unit testing of the Transaction class at all? (The only test I would be able to do (e.g. checking instance variables are set) feels like a test of state, not behaviour)
-- The decision to use 'real' dates rather than strings
-    - It felt a bit bad to leave things as strings even though not in the requirements to do anything other than present the string.
-    - Your thoughts?
-- The testing of private methods
-    - I still find the distinction between feature and unit tests unclear in my head.
-    - I've clearly primarily feature tested here, but e.g. my Printer class only has a single unit test. 
-    - This is because only one method is a public one, and I understand it's best practice to only test the public interface of a class.
-    - Can I check you agree with this approach? What about in my review etc. - is it ok to skip testing private methods under 'exam' conditions or will I be risking a "he is not TDDing" comment?
-- Usage of a 'balance' attribute reader so I can unit test deposits and withdrawals.
-    - I don't like adding a reader just for a test...
-    - But I've heard that typing tests to implementation, like using GET_INSTANCE_VARIABLE to grab the balance directly from the class also isn't good practice. 
-    - Would love your thoughts.
- 
-
-
 ## Instructions
 
 Today, you'll practice doing a tech test.
